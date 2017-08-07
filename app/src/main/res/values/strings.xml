@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DownZ</string>
+    <string name="TAG">Error</string>
+    <string name="URL">http://pastebin.com/raw/wgkJgazE</string>
+    <string name="LoadImage">Load Image</string>
+    <string name="CancelLoad">Cancel Load</string>
+    <string name="ClearImage">Remove Image</string>
+</resources>

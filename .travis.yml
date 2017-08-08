@@ -1,0 +1,2 @@
+script:
+ - ./gradlew build connectedCheck

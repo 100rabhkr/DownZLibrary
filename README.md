@@ -288,7 +288,7 @@ How do I use DownZ?
             ...
             
         }
-    //event to clear cache
+    //event to clear item from cache
     public void btntoClearCache(View v){
     
            cacheManager.removeDataFromCache(mUrl);

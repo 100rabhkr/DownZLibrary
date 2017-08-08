@@ -1,5 +1,6 @@
 DownZ 
 ===================
+[![](https://jitpack.io/v/100rabhkr/DownZLibrary.svg)](https://jitpack.io/#100rabhkr/DownZLibrary)
 
 DownZ is an HTTP library that boosts networking in Android apps and makes it significantly easier and faster.
 
@@ -294,4 +295,4 @@ Disclaimer
 ----------
 
 This is not an official Google product.
-[![](https://jitpack.io/v/100rabhkr/DownZLibrary.svg)](https://jitpack.io/#100rabhkr/DownZLibrary)
+

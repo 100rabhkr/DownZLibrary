@@ -278,7 +278,6 @@ public class UserActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_send:
                 if (ImageLoadflag == 1) {
-                    BitmapDrawable image = (BitmapDrawable) UploadedImage.getDrawable();
                     Bitmap sendbitmap = UploadedImage.getDrawingCache();
                     int MyVersion = Build.VERSION.SDK_INT;
                     if (MyVersion > Build.VERSION_CODES.LOLLIPOP_MR1) {

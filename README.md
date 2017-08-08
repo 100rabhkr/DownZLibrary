@@ -95,44 +95,42 @@ How do I use DownZ?
 **Make Standard Request**
 
 	…
-	…
-	DownZ
-            	.from(mContext) //context 
-                	.load(DownZ.Method.GET, “http://yoururl.com”)
-                        .asBitmap() 	//asJsonArray() or asJsonObject() can be used depending on need
-                	.setCallback(new HttpListener<Bitmap>() {
-                	    @Override
-                	    public void onRequest() {
+	 DownZ
+                .from(mContext) //context 
+                .load(DownZ.Method.GET, “http://yoururl.com”)
+                .asBitmap() 	//asJsonArray() or asJsonObject() can be used depending on need
+                .setCallback(new HttpListener<Bitmap>() {
+                    @Override
+                    public void onRequest() {
 
-			//On Beginning of request
+                        //On Beginning of request
 
-                	    }
+                    }
 
-                	    @Override
-                	    public void onResponse(Bitmap data) {
-                	        
-			if(data != null){
+                    @Override
+                    public void onResponse(Bitmap data) {
 
-				// do something
-			
-			}
-               	    }
+                        if(data != null){
 
-                	    @Override
-                	    public void onError() {
+                            // do something
 
-				//do something when there is an error
+                        }
+                    }
 
-                	    }
+                    @Override
+                    public void onError() {
 
-               	     @Override
-                   	     public void onCancel() {
+                        //do something when there is an error
 
-				//do something when request cancelled
+                    }
 
-                            }
-	                });
+                    @Override
+                    public void onCancel() {
 
+                        //do something when request cancelled
+
+                    }
+                });
 
 **Pass Header or Request Parameters (Optional)**
 

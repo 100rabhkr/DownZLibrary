@@ -243,6 +243,7 @@ public class UserActivity extends AppCompatActivity {
     }
 
     public void DisplayFab() {
+        /*function to show Fab Buttons*/
         fabFlag = 1;
         FabLayout.setVisibility(View.VISIBLE);
         FabLayout.startAnimation(animforVisible);
@@ -254,6 +255,7 @@ public class UserActivity extends AppCompatActivity {
     }
 
     public void RemoveFab() {
+        /*function to remove Fab Buttons*/
         fabFlag = 0;
         FabLayout.setVisibility(View.GONE);
         FabLayout.startAnimation(animforInvisible);
@@ -272,6 +274,7 @@ public class UserActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // Performs function associated with a menu items
         switch (item.getItemId()) {
             case R.id.action_send:
                 if (ImageLoadflag == 1) {
@@ -285,6 +288,7 @@ public class UserActivity extends AppCompatActivity {
 
                     }
                     if (canSend) {
+                        // Stores the file so that it can be shared on various apps
                         String bitmapPath = MediaStore.Images.Media.insertImage(getContentResolver(), sendbitmap, "title", null);
                         Uri bitmapUri = Uri.parse(bitmapPath);
                         Intent intent = new Intent(Intent.ACTION_SEND);
@@ -292,8 +296,14 @@ public class UserActivity extends AppCompatActivity {
                         intent.putExtra(Intent.EXTRA_STREAM, bitmapUri);
                         startActivity(Intent.createChooser(intent, "Share"));
                     }
+
                 }
 
+                break;
+            case R.id.action_download:
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(UrlforUpload));
+                startActivity(i);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -327,6 +337,7 @@ public class UserActivity extends AppCompatActivity {
                     //not granted
                 }
                 break;
+
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }

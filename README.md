@@ -294,3 +294,4 @@ Disclaimer
 ----------
 
 This is not an official Google product.
+[![](https://jitpack.io/v/100rabhkr/DownZLibrary.svg)](https://jitpack.io/#100rabhkr/DownZLibrary)

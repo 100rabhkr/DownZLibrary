@@ -60,7 +60,7 @@ Or Maven:
 	<dependency>
 	    <groupId>com.github.100rabhkr</groupId>
 	    <artifactId>DownZLibrary</artifactId>
-	    <version>1.0</version>
+	    <version>1.1</version>
 	</dependency>
 
 Or Sbt: 
@@ -71,7 +71,7 @@ Or Sbt:
        
 **Step 2.** Add the dependency
  
-    	libraryDependencies += "com.github.100rabhkr" % "DownZLibrary" % "1.0"
+    	libraryDependencies += "com.github.100rabhkr" % "DownZLibrary" % "1.1"
 
 
 Snapshots from Sample App

@@ -1,12 +1,25 @@
 package com.example.saurabhkumar.downz;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -22,6 +35,12 @@ import com.example.downzlibrary.DataTypes.Type;
 import com.example.downzlibrary.DownZ;
 import com.example.downzlibrary.ListnerInterface.HttpListener;
 import com.example.downzlibrary.Utilities.CacheManager;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+
+import static android.R.attr.bitmap;
 
 public class UserActivity extends AppCompatActivity {
     Toolbar mToolbar;
@@ -39,6 +58,7 @@ public class UserActivity extends AppCompatActivity {
     TextView UserNameTextView;
     int ImageLoadflag;
     Type<Bitmap> Upload;
+    BitMap bitmaptosend;
     BitMap ProfilePicBitmap;
     CacheManager<Bitmap> bitmapCacheManager;
     ProgressBar progressBar;
@@ -51,6 +71,7 @@ public class UserActivity extends AppCompatActivity {
     Animation animforVisible;
     Animation animforFabRotate;
     Animation animforInvisible;
+    Boolean canSend;
 
 
     @Override
@@ -77,13 +98,15 @@ public class UserActivity extends AppCompatActivity {
         bitmapCacheManager = new CacheManager<>(40 * 1024 * 1024);
         /* Setting Up Layout */
         UploadedImage = findViewById(R.id.Upload);
+        UploadedImage.setDrawingCacheEnabled(true);
+        UploadedImage.buildDrawingCache();
         ProfilePic = findViewById(R.id.profile_image);
         Tags = findViewById(R.id.Tags);
         NumberofLikesTextView = findViewById(R.id.NumOfLikes);
         UserNameTextView = findViewById(R.id.UserNameinNew);
         NameofUserTextView = findViewById(R.id.NameOfUserinNew);
         progressBar = (ProgressBar) findViewById(R.id.progress);
-
+        canSend = false;
         // layout containing all FAB buttons
 
         FabLayout = findViewById(R.id.OptionsLayout);
@@ -247,4 +270,65 @@ public class UserActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_send:
+                if (ImageLoadflag == 1) {
+                    BitmapDrawable image = (BitmapDrawable) UploadedImage.getDrawable();
+                    Bitmap sendbitmap = UploadedImage.getDrawingCache();
+                    int MyVersion = Build.VERSION.SDK_INT;
+                    if (MyVersion > Build.VERSION_CODES.LOLLIPOP_MR1) {
+                        if (!checkIfAlreadyhavePermission()) {
+                            requestForSpecificPermission();
+                        }
+
+                    }
+                    if (canSend) {
+                        String bitmapPath = MediaStore.Images.Media.insertImage(getContentResolver(), sendbitmap, "title", null);
+                        Uri bitmapUri = Uri.parse(bitmapPath);
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.setType("image/png");
+                        intent.putExtra(Intent.EXTRA_STREAM, bitmapUri);
+                        startActivity(Intent.createChooser(intent, "Share"));
+                    }
+                }
+
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private boolean checkIfAlreadyhavePermission() {
+        int result = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
+        if (result == PackageManager.PERMISSION_GRANTED) {
+            canSend = true;
+            return true;
+
+        } else {
+            canSend = false;
+            return false;
+        }
+    }
+
+    private void requestForSpecificPermission() {
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 101);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case 101:
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //granted
+                    canSend = true;
+                } else {
+                    canSend = false;
+                    //not granted
+                }
+                break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+    }
 }

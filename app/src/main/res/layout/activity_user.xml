@@ -173,6 +173,7 @@
                 android:background="@drawable/round_layout_alternate"
                 android:clickable="true"
                 android:src="@drawable/ic_reload"
+                app:backgroundTint="#5BA829"
                 app:layout_anchorGravity="bottom|right|end" />
 
             <RelativeLayout
@@ -205,6 +206,7 @@
                 android:background="@drawable/round_layout"
                 android:clickable="true"
                 android:src="@drawable/ic_close"
+                app:backgroundTint="#FFAE4F"
                 app:layout_anchorGravity="bottom|right|end" />
 
             <RelativeLayout
@@ -237,6 +239,7 @@
                 android:background="@drawable/round_layout_alternate"
                 android:clickable="true"
                 android:src="@drawable/ic_clear"
+                app:backgroundTint="#5BA829"
                 app:layout_anchorGravity="bottom|right|end" />
 
             <RelativeLayout
@@ -265,6 +268,7 @@
         android:background="@drawable/round_layout"
         android:clickable="true"
         android:src="@drawable/ic_edit"
+        app:backgroundTint="#FFAE4F"
         app:layout_anchorGravity="bottom|right|end" />
 
 

@@ -5,6 +5,7 @@ import android.content.Context;
 import com.example.downzlibrary.DataTypes.BitMap;
 import com.example.downzlibrary.DataTypes.JsonArray;
 import com.example.downzlibrary.DataTypes.JsonObject;
+import com.example.downzlibrary.DataTypes.XmlType;
 import com.example.downzlibrary.Parameters.HeaderParams;
 import com.example.downzlibrary.Parameters.RequestParams;
 
@@ -91,6 +92,10 @@ public class DownZ {
 
     public BitMap asBitmap() {
         return new BitMap(method, url, params, headers);
+    }
+
+    public XmlType asXml() {
+        return new XmlType(method, url, params, headers);
     }
 
     /**

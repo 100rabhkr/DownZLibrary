@@ -297,7 +297,7 @@ How do I use DownZ?
 Getting Help
 ------------
 
-To report a specific problem or feature request in DownZ, open a new issue on Github. For questions, suggestions, or even to say 'hi', just drop an email at skkumar.sk94@gmail.com
+To report a specific problem or feature request in DownZ, you can [open a new issue on Github](https://github.com/100rabhkr/DownZLibrary/issues/new). For questions, suggestions, or even to say 'hi', just drop an email at skkumar.sk94@gmail.com
 
 Contributing
 ------------

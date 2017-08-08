@@ -231,6 +231,7 @@ How do I use DownZ?
             imageview = (ImageView) findViewById(R.id.image_profile);
             imageview.setDrawingCacheEnabled(true); //can be used if Image has to be shared afterwards
             imageview.buildDrawingCache();
+            ...
             
         }
     //event to make request
@@ -284,6 +285,7 @@ How do I use DownZ?
             imageview = (ImageView) findViewById(R.id.image_profile);
             imageview.setDrawingCacheEnabled(true); //can be used if Image has to be shared afterwards
             imageview.buildDrawingCache();
+            ...
             
         }
     //event to clear cache

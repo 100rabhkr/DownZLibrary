@@ -289,7 +289,7 @@ Saurabh Kumar - @100rabhkr on GitHub, @notsaurabhkumar on Twitter
 License
 -------
 
-BSD, part MIT and Apache 2.0. See the LICENSE file for details.
+MIT See the [LICENSE](https://github.com/100rabhkr/DownZLibrary/blob/master/LICENSE) file for details.
 
 Disclaimer
 ----------

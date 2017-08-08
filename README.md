@@ -279,7 +279,7 @@ To report a specific problem or feature request in DownZ, open a new issue on Gi
 Contributing
 ------------
 
-If you like DownZ, please contribute by writing at skkumar.sk94@gmail.com. Your help and support would make DownZ even better.
+If you like DownZ, please contribute by writing at skkumar.sk94@gmail.com. Your help and support would make DownZ even better. Before submitting pull requests, contributors must sign [Google's individual contributor license agreement.](https://cla.developers.google.com/about/google-individual)
 
 Author
 ------

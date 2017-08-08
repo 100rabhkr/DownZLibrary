@@ -6,6 +6,9 @@ components:
 - platform-tools
 - android-26
 - extra-android-m2repository
-
+licenses:
+- 'android-sdk-preview-license-.+'
+- 'android-sdk-license-.+'
+- 'google-gdk-license-.+'
 script:
 - ./gradlew build connectedCheck

@@ -1,6 +1,6 @@
 DownZ 
 ===================
-[![](https://jitpack.io/v/100rabhkr/DownZLibrary.svg)](https://jitpack.io/#100rabhkr/DownZLibrary)
+[![](https://jitpack.io/v/100rabhkr/DownZLibrary.svg)](https://jitpack.io/#100rabhkr/DownZLibrary) | [View release history](https://github.com/100rabhkr/DownZLibrary/releases)
 
 DownZ is an HTTP library that boosts networking in Android apps and makes it significantly easier and faster.
 
@@ -16,7 +16,7 @@ DownZ offers the following benefits:
  - Strong requisition that makes it easy to effectively manage UI with data being fetched asynchronously from the network.
 
 
-DownZ excels at handling HTTP requests.It comes with built-in support for images, and JSON, while support for XML can also be added further. By providing built-in support for the features you require, DownZ frees you from writing tons of code and finally allows you to concentrate on the logic that is specific to your app.
+DownZ excels at handling HTTP requests.It comes with built-in support for images, JSON and Xml. By providing built-in support for the features you require, DownZ frees you from writing tons of code and finally allows you to concentrate on the logic that is specific to your app.
 
 
 ----------
@@ -40,7 +40,7 @@ You can use Gradle
 **Step 2.** Add the dependency
 
 	dependencies {
-	        compile 'com.github.100rabhkr:DownZLibrary:1.0'
+	        compile 'com.github.100rabhkr:DownZLibrary:1.1'
 	}
 
 
@@ -99,7 +99,7 @@ How do I use DownZ?
 	 DownZ
                 .from(mContext) //context 
                 .load(DownZ.Method.GET, “http://yoururl.com”)
-                .asBitmap() 	//asJsonArray() or asJsonObject() can be used depending on need
+                .asBitmap() 	//asJsonArray() or asJsonObject() or asXml() can be used depending on need
                 .setCallback(new HttpListener<Bitmap>() {
                     @Override
                     public void onRequest() {

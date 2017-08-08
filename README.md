@@ -13,10 +13,9 @@ DownZ offers the following benefits:
  - Images in memory cache are auto removed if not used for a long time.
  - Ease of customization, for example, cancel request and clear cache.
  - Strong requisition that makes it easy to effectively manage UI with data being fetched asynchronously from the network.
- - Pull to refresh latest images.
 
 
-DownZ excels at handling HTTP requests.It comes with support for images, and JSON, and XML. By providing built-in support for the features you require, DownZ frees you from writing tons of code and finally allows you to concentrate on the logic that is specific to your app.
+DownZ excels at handling HTTP requests.It comes with built-in support for images, and JSON, while support for XML can also be added further. By providing built-in support for the features you require, DownZ frees you from writing tons of code and finally allows you to concentrate on the logic that is specific to your app.
 
 
 ----------
@@ -142,7 +141,7 @@ How do I use DownZ?
     DownZ
                     .from(mContext)
                     .load(DownZ.Method.GET, mUrl)
-    	    .setHeaderParameter(“key”,"value") 
+    	            .setHeaderParameter(“key”,"value") 
                     .setRequestParameter(“Key”,”Value")
                     .setRequestParameter(“Key1","Value1") 
                     .asBitmap()
@@ -254,7 +253,7 @@ How do I use DownZ?
                     public void onResponse(Bitmap data) {
                         if(data!=null){
                             // do some stuff here
-                            imgProfile.setImageBitmap(data);
+                            imageview.setImageBitmap(data);
                         }
                     }
 
@@ -281,7 +280,7 @@ To report a specific problem or feature request in DownZ, open a new issue on Gi
 Contributing
 ------------
 
-If you like DownZ, please contribute by writing at skkumar.sk94@gmail.com. You help and support would make DownZ even better.
+If you like DownZ, please contribute by writing at skkumar.sk94@gmail.com. Your help and support would make DownZ even better.
 
 Author
 ------

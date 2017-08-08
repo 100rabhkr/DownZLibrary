@@ -270,7 +270,7 @@ How do I use DownZ?
 
     }
     
-**Clear Cache**
+**Removing from Cache**
 
      ...
      public class SomeActivity extends AppCompatActivity {

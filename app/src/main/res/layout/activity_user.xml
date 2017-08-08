@@ -170,7 +170,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/round_layout"
+                android:background="@drawable/round_layout_alternate"
                 android:clickable="true"
                 android:src="@drawable/ic_reload"
                 app:layout_anchorGravity="bottom|right|end" />
@@ -234,7 +234,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/round_layout"
+                android:background="@drawable/round_layout_alternate"
                 android:clickable="true"
                 android:src="@drawable/ic_clear"
                 app:layout_anchorGravity="bottom|right|end" />

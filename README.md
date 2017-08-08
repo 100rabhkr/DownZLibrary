@@ -307,7 +307,7 @@ If you like DownZ, please contribute by writing at skkumar.sk94@gmail.com. Your 
 Author
 ------
 
-Saurabh Kumar - @100rabhkr on GitHub, [@NotSaurabhKumar](https://twitter.com/NotSaurabhKumar) on Twitter
+Saurabh Kumar - [@100rabhkr](https://github.com/100rabhkr) on GitHub, [@NotSaurabhKumar](https://twitter.com/NotSaurabhKumar) on Twitter
 
 License
 -------

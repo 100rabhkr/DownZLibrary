@@ -99,7 +99,7 @@ How do I use DownZ?
 	DownZ
             	.from(mContext) //context 
                 	.load(DownZ.Method.GET, “http://yoururl.com”)
-                .asBitmap() 	//asJsonArray() or asJsonObject() can be used depending on need
+                        .asBitmap() 	//asJsonArray() or asJsonObject() can be used depending on need
                 	.setCallback(new HttpListener<Bitmap>() {
                 	    @Override
                 	    public void onRequest() {

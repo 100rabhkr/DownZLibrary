@@ -135,23 +135,23 @@ How do I use DownZ?
 **Pass Header or Request Parameters (Optional)**
 
 
-    …
-    DownZ
-                    .from(mContext)
-                    .load(DownZ.Method.GET, mUrl)
-    	            .setHeaderParameter(“key”,"value") 
-                    .setRequestParameter(“Key”,”Value")
-                    .setRequestParameter(“Key1","Value1") 
-                    .asBitmap()
-                    .setCallback(new HttpListener<JsonObject>() {
-                        @Override
-                        public void onRequest() {
+   ...
+        DownZ
+                .from(MainActivity.this)
+                .load(DownZ.Method.GET,mUrl)
+                .setHeaderParameter("key","value")
+                .setRequestParameter("key1","value1")
+                .setRequestParameter("key2","value2")
+                .asBitmap()
+                .setCallback(new HttpListener<Bitmap>() {
+                    @Override
+                    public void onRequest() {
 
                     }
 
                     @Override
-                    public void onResponse(JsonObject data) {
-                        if(data != null){
+                    public void onResponse(Bitmap bitmap) {
+                        if(bitmap != null){
 
                             //do something
                         }
@@ -159,7 +159,6 @@ How do I use DownZ?
 
                     @Override
                     public void onError() {
-
 
                     }
 

@@ -135,8 +135,9 @@ How do I use DownZ?
 **Pass Header or Request Parameters (Optional)**
 
 
-   ...
-        DownZ
+ 
+        ...
+	DownZ
                 .from(MainActivity.this)
                 .load(DownZ.Method.GET,mUrl)
                 .setHeaderParameter("key","value")

@@ -269,6 +269,29 @@ How do I use DownZ?
     }
 
     }
+    
+**Clear Cache**
+
+     ...
+     public class SomeActivity extends AppCompatActivity {
+        ...
+        CacheManager<Bitmap> cacheManager; 
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            ...
+            String mUrl = "http://yoururl.com/image.png";
+            cacheManager=new CacheManager<>(40*1024*1024); // 40mb
+            imageview = (ImageView) findViewById(R.id.image_profile);
+            imageview.setDrawingCacheEnabled(true); //can be used if Image has to be shared afterwards
+            imageview.buildDrawingCache();
+            
+        }
+    //event to clear cache
+    public void btntoClearCache(View v){
+    
+           cacheManager.removeDataFromCache(mUrl);
+    }
+    }
 
 
 Getting Help
